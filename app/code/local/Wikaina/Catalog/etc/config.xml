@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <modules>
+    <Wikaina_Catalog>
+      <version>0.0.1</version>
+    </Wikaina_Catalog>
+  </modules>
+  <frontend>
+    <translate>
+      <modules>
+        <Wikaina_Catalog>
+          <files>
+            <default>Wikaina_Catalog.csv</default>
+          </files>
+        </Wikaina_Catalog>
+      </modules>
+    </translate>
+  </frontend>
+</config>

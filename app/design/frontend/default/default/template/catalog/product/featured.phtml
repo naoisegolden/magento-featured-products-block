@@ -1,0 +1,21 @@
+<section>
+    <header class="header">
+        <h2><?php echo $this->__('Featured Products') ?></h2>
+    </header>
+    <?php if ($_products = $this->getFeaturedProduct()): ?>
+        <div>
+            <?php foreach( $_products as $_product ): ?>
+                <article>
+                    <a href="<?php echo $_product->getProductUrl() ?>">
+                        <header><h4><?php echo $this->helper('catalog/output')->productAttribute($_product, $_product->getName() , 'name') ?></h4></header>
+                        <?php if(!$_product->isSaleable()): ?><p class="tip tip-soldout"><?php echo $this->__('Sold Out') ?></p><?php endif; ?>
+                        <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image'); ?>" alt="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>">
+                        <p class="price"><?php echo Mage::helper('core')->currency($_product->getFinalPrice(),true,false); ?></p>
+                    </a>
+                </article>
+            <?php endforeach; ?>
+        </div>
+    <?php else: ?>
+        <p><?php echo $this->__('No featured products available') ?></p>
+    <?php endif; ?>
+</section>
